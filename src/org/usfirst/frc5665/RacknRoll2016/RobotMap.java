@@ -34,7 +34,7 @@ public class RobotMap {
     public static SpeedController driveLeft2;
     public static SpeedController driveRight1;
     public static SpeedController driveRight2;
-    public static RobotDrive driveRobotDrive41;
+    public static RobotDrive driveRobotDrive4;
     public static Encoder armEncoder;
     public static SpeedController armMotor;
 
@@ -54,13 +54,13 @@ public class RobotMap {
         driveRight2 = new Victor(3);
         LiveWindow.addActuator("Drive", "Right2", (Victor) driveRight2);
         
-        driveRobotDrive41 = new RobotDrive(driveLeft1, driveLeft2,
+        driveRobotDrive4 = new RobotDrive(driveLeft1, driveLeft2,
               driveRight1, driveRight2);
         
-        driveRobotDrive41.setSafetyEnabled(true);
-        driveRobotDrive41.setExpiration(0.1);
-        driveRobotDrive41.setSensitivity(0.5);
-        driveRobotDrive41.setMaxOutput(1.0);
+        driveRobotDrive4.setSafetyEnabled(true);
+        driveRobotDrive4.setExpiration(0.1);
+        driveRobotDrive4.setSensitivity(0.5);
+        driveRobotDrive4.setMaxOutput(1.0);
 
         armEncoder = new Encoder(0, 1, false, EncodingType.k4X);
         LiveWindow.addSensor("Arm", "Encoder", armEncoder);
