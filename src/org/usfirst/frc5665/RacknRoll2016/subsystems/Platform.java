@@ -23,6 +23,7 @@ public class Platform extends Subsystem {
     
     public void unlock() {
         lock.set(Relay.Value.kOn);
+        isLocked = false;
     }
 }
 
