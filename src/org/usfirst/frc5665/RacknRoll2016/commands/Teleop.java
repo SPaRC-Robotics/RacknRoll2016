@@ -50,7 +50,7 @@ public class Teleop extends Command {
     protected void execute() {
     	Joystick j = Robot.oi.joystick;
     	RobotMap.driveRobotDrive2.arcadeDrive(j.getRawAxis(4)*Drive.rotationSensitivity, j.getRawAxis(5)*Drive.movementSensitivity);
-    	RobotMap.armMotorLeft.set(j.getRawAxis(1));
+    	Robot.arm.moveArm(j.getRawAxis(1));
     	Robot.wrist.openWrist(j.getRawAxis(2)-j.getRawAxis(3));
     }
 
