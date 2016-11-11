@@ -59,34 +59,19 @@ public class RobotMap {
         driveRobotDrive2.setMaxOutput(1.0);
 
         driveRobotDrive2.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-        armEncoderRight = new Encoder(0, 1, false, EncodingType.k4X);
-        LiveWindow.addSensor("Arm", "Encoder Right", armEncoderRight);
-        armEncoderRight.setDistancePerPulse(0.724346);
-        armEncoderRight.setPIDSourceType(PIDSourceType.kRate);
+
         armMotorRight = new Talon(2);
         LiveWindow.addActuator("Arm", "Motor Right", (Talon) armMotorRight);
         
-        armEncoderLeft = new Encoder(2, 3, false, EncodingType.k4X);
-        LiveWindow.addSensor("Arm", "Encoder Left", armEncoderLeft);
-        armEncoderLeft.setDistancePerPulse(1.0);
-        armEncoderLeft.setPIDSourceType(PIDSourceType.kRate);
         armMotorLeft = new Victor(6);
         LiveWindow.addActuator("Arm", "Motor Left", (Victor) armMotorLeft);
         
         platformLock = new Relay(0);
         LiveWindow.addActuator("Platform", "Lock", platformLock);
         
-        platformEncoderRight = new Encoder(6, 7, false, EncodingType.k4X);
-        LiveWindow.addSensor("Platform", "Encoder Right", platformEncoderRight);
-        platformEncoderRight.setDistancePerPulse(1.0);
-        platformEncoderRight.setPIDSourceType(PIDSourceType.kRate);
         platformMotorRight = new Talon(5);
         LiveWindow.addActuator("Platform", "Motor Right", (Talon) platformMotorRight);
         
-        platformEncoderLeft = new Encoder(4, 5, false, EncodingType.k4X);
-        LiveWindow.addSensor("Platform", "Encoder Left", platformEncoderLeft);
-        platformEncoderLeft.setDistancePerPulse(1.0);
-        platformEncoderLeft.setPIDSourceType(PIDSourceType.kRate);
         platformMotorLeft = new Talon(3);
         LiveWindow.addActuator("Platform", "Motor Left", (Talon) platformMotorLeft);
         

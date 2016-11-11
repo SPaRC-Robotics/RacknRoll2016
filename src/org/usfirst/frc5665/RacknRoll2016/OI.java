@@ -63,10 +63,6 @@ public class OI {
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous", new Autonomous());
         SmartDashboard.putData("Teleop", new Teleop());
-        SmartDashboard.putData("Forward", new Forward(1.0));
-        SmartDashboard.putData("Back", new Back(1.0));
-        SmartDashboard.putData("Left", new Left(1.0));
-        SmartDashboard.putData("Right", new Right(1.0));
         SmartDashboard.putData("Swing", new Swing(30.0));
         SmartDashboard.putData("Unlock Platform", new UnlockPlatform());
 
