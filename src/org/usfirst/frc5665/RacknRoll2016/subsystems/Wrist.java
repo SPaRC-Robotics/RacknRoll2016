@@ -46,5 +46,9 @@ public class Wrist extends Subsystem {
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
     }
+    
+    public void openWrist(double rate) {
+        windowMotor.set(rate);        
+    }
 }
 
