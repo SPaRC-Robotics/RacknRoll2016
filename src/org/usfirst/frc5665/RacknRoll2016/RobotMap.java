@@ -34,14 +34,10 @@ public class RobotMap {
     public static SpeedController driveRight;
     public static SpeedController driveLeft;
     public static RobotDrive driveRobotDrive2;
-    public static Encoder armEncoderRight;
     public static SpeedController armMotorRight;
-    public static Encoder armEncoderLeft;
     public static SpeedController armMotorLeft;
     public static Relay platformLock;
-    public static Encoder platformEncoderRight;
     public static SpeedController platformMotorRight;
-    public static Encoder platformEncoderLeft;
     public static SpeedController platformMotorLeft;
     public static SpeedController wristWindowMotor;
 
