@@ -38,5 +38,8 @@ public class Drive extends Subsystem {
 
         setDefaultCommand(new Teleop());
     }
+    public void arcadeDrive(double xAxis, double yAxis) {
+    	robotDrive2.arcadeDrive(xAxis*rotationSensitivity,yAxis*movementSensitivity);
+    }
 }
 
