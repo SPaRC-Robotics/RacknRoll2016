@@ -17,7 +17,7 @@ import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
@@ -54,20 +54,20 @@ public class RobotMap {
 
         driveRobotDrive2.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
 
-        armMotorRight = new Talon(2);
-        LiveWindow.addActuator("Arm", "Motor Right", (Talon) armMotorRight);
+        armMotorRight = new Victor(3);
+        LiveWindow.addActuator("Arm", "Motor Right", (Victor) armMotorRight);
         
-        armMotorLeft = new Victor(6);
+        armMotorLeft = new Victor(2);
         LiveWindow.addActuator("Arm", "Motor Left", (Victor) armMotorLeft);
         
         platformLock = new Relay(0);
         LiveWindow.addActuator("Platform", "Lock", platformLock);
         
-        platformMotorRight = new Talon(5);
-        LiveWindow.addActuator("Platform", "Motor Right", (Talon) platformMotorRight);
+        platformMotorRight = new Victor(6);
+        LiveWindow.addActuator("Platform", "Motor Right", (Victor) platformMotorRight);
         
-        platformMotorLeft = new Talon(3);
-        LiveWindow.addActuator("Platform", "Motor Left", (Talon) platformMotorLeft);
+        platformMotorLeft = new Victor(5);
+        LiveWindow.addActuator("Platform", "Motor Left", (Victor) platformMotorLeft);
         
         wristWindowMotor = new Victor(4);
         LiveWindow.addActuator("Wrist", "Window Motor", (Victor) wristWindowMotor);
