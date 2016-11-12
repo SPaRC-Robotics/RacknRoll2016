@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Platform extends Subsystem {
     
-    private boolean isLocked = true;
+    public boolean isLocked = true;
     private final Relay lock = RobotMap.platformLock;
     
     // Put methods for controlling this subsystem

@@ -41,7 +41,7 @@ public class Arm extends Subsystem {
     
     public void moveArm(double rate) {
         motorLeft.set(rate);
-        motorRight.set(rate);
+        motorRight.set(-rate);
     }
 }
 

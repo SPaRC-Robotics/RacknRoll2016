@@ -11,24 +11,14 @@
 
 package org.usfirst.frc5665.RacknRoll2016.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
-
 import org.usfirst.frc5665.RacknRoll2016.Robot;
-import org.usfirst.frc5665.RacknRoll2016.RobotMap;
-import org.usfirst.frc5665.RacknRoll2016.subsystems.Drive;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
  */
-public class Teleop extends Command {
-
-    public Teleop() {
-        
-        requires(Robot.drive);
-        requires(Robot.wrist);
+public class RaisePlatform extends Command {
+    public RaisePlatform() {
     }
 
     // Called just before this Command runs the first time
@@ -37,14 +27,6 @@ public class Teleop extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Joystick j = Robot.oi.getJoystick();
-    	
-    	Robot.drive.arcadeDrive(j.getRawAxis(4), j.getRawAxis(5));
-    	Robot.arm.moveArm(j.getRawAxis(1));
-    	Robot.wrist.openWrist(j.getRawAxis(2)-j.getRawAxis(3));
-    	if(j.getRawButton(7) /*&& Robot.platform.isLocked*/) {
-    		new UnlockPlatform();
-    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
