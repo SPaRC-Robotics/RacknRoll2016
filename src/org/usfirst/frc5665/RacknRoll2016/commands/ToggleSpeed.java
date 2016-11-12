@@ -11,47 +11,29 @@
 
 package org.usfirst.frc5665.RacknRoll2016.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
-
 import org.usfirst.frc5665.RacknRoll2016.Robot;
-import org.usfirst.frc5665.RacknRoll2016.RobotMap;
-import org.usfirst.frc5665.RacknRoll2016.subsystems.Drive;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
  */
-public class Teleop extends Command {
-
-    public Teleop() {
-        
-        requires(Robot.drive);
-        requires(Robot.wrist);
+public class ToggleSpeed extends Command {
+    
+    public ToggleSpeed() {
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.drive.toggleSpeed();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Joystick j = Robot.oi.getJoystick();
-    	
-    	Robot.drive.arcadeDrive(j.getRawAxis(4), j.getRawAxis(5));
-    	Robot.arm.moveArm(j.getRawAxis(1));
-    	Robot.wrist.openWrist(j.getRawAxis(2)-j.getRawAxis(3));
-    	
-    	Robot.oi.getButton(7).whileHeld(new UnlockPlatform());
-    	Robot.oi.getButton(6).whileHeld(new RaisePlatform(1.0));
-    	Robot.oi.getButton(5).whileHeld(new RaisePlatform(-1.0));
-    	Robot.oi.getButton(3).whenPressed(new ToggleSpeed());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

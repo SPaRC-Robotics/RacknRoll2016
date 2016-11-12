@@ -14,6 +14,8 @@ package org.usfirst.frc5665.RacknRoll2016;
 import org.usfirst.frc5665.RacknRoll2016.commands.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 import org.usfirst.frc5665.RacknRoll2016.subsystems.*;
 
 /**
@@ -56,13 +58,19 @@ public class OI {
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous", new Autonomous());
+        SmartDashboard.putData("Grab",new Grab(1.0,1.0));
         SmartDashboard.putData("Teleop", new Teleop());
-        SmartDashboard.putData("Swing", new Swing(30.0));
+        SmartDashboard.putData("Swing",new Swing(1.0,1.0));
+        SmartDashboard.putData("Raise Platform", new RaisePlatform(1.0));
         SmartDashboard.putData("Unlock Platform", new UnlockPlatform());
+        SmartDashboard.putData("Toggle Speed", new ToggleSpeed());
     }
 
     public Joystick getJoystick() {
         return joystick;
+    }
+    public JoystickButton getButton(int buttonId) {
+    	return new JoystickButton(joystick,buttonId);
     }
 
 }

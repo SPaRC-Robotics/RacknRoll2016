@@ -18,7 +18,6 @@ import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Victor;
-import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
@@ -33,7 +32,7 @@ public class RobotMap {
     public static RobotDrive driveRobotDrive2;
     public static SpeedController armMotorRight;
     public static SpeedController armMotorLeft;
-    public static Relay platformLock;
+    public static SpeedController platformLock;
     public static SpeedController platformMotorRight;
     public static SpeedController platformMotorLeft;
     public static SpeedController wristWindowMotor;
@@ -60,8 +59,8 @@ public class RobotMap {
         armMotorLeft = new Victor(2);
         LiveWindow.addActuator("Arm", "Motor Left", (Victor) armMotorLeft);
         
-        platformLock = new Relay(0);
-        LiveWindow.addActuator("Platform", "Lock", platformLock);
+        platformLock = new Victor(7);
+        LiveWindow.addActuator("Platform", "Lock", (Victor) platformLock);
         
         platformMotorRight = new Victor(6);
         LiveWindow.addActuator("Platform", "Motor Right", (Victor) platformMotorRight);

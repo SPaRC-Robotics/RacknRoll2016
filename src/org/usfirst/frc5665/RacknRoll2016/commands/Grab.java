@@ -20,9 +20,9 @@ import org.usfirst.frc5665.RacknRoll2016.Robot;
 public class Grab extends Command {
 
     private double m_duration;
-    private boolean m_direction;
+    private double m_direction;
     
-    public Grab(double duration, boolean direction) {
+    public Grab(double duration, double direction) {
 
         m_duration = duration;
         m_direction = direction;
