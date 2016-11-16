@@ -46,11 +46,11 @@ public class Drive extends Subsystem {
     {
     	if(normalSpeed)
     	{
-    		movementSensitivity = 1.0;
-        	rotationSensitivity = 1.0;
+    		movementSensitivity = 0.80;
+        	rotationSensitivity = 0.7;
         	normalSpeed=false;
     	} else {
-    		movementSensitivity = 0.75;
+    		movementSensitivity = 0.65;
     		rotationSensitivity = 0.5;
     		normalSpeed=true;
     	}

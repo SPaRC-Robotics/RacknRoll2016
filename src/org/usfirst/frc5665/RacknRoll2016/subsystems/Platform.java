@@ -29,7 +29,7 @@ public class Platform extends Subsystem {
     	lock.set(0.0);
     }
     public void raise(double direction) {
-    	motorRight.set(-1.0*direction);
+    	motorRight.set(1.0*direction);
     	motorLeft.set(-1.0*direction);
     }
     public void stopRaise() {
