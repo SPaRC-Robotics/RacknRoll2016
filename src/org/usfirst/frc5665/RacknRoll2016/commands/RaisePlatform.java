@@ -19,10 +19,12 @@ import org.usfirst.frc5665.RacknRoll2016.Robot;
  */
 public class RaisePlatform extends Command {
 
+	private int target;
     private double direction;
     
-    public RaisePlatform(double direction) {
+    public RaisePlatform(int target, double direction) {
         this.direction = direction;
+        this.target = target;
     }
 
     // Called just before this Command runs the first time
@@ -31,7 +33,7 @@ public class RaisePlatform extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.platform.raise(direction);
+    	Robot.platform.raise(target, direction);
     }
 
     // Make this return true when this Command no longer needs to run execute()

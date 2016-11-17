@@ -28,9 +28,15 @@ public class Platform extends Subsystem {
     public void stopUnlock() {
     	lock.set(0.0);
     }
-    public void raise(double direction) {
-    	motorRight.set(1.0*direction);
-    	motorLeft.set(-1.0*direction);
+    public void raise(int target, double direction) {
+    	if(target==1 || target==3)
+    	{
+    		motorRight.set(1.0*direction);
+    	}
+    	if(target==2 || target==3)
+    	{
+        	motorLeft.set(-1.0*direction);
+    	}
     }
     public void stopRaise() {
     	motorRight.set(0.0);

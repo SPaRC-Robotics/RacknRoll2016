@@ -60,7 +60,7 @@ public class OI {
         SmartDashboard.putData("Grab",new Grab(1.0));
         SmartDashboard.putData("Teleop", new Teleop());
         SmartDashboard.putData("Swing",new Swing(1.0));
-        SmartDashboard.putData("Raise Platform", new RaisePlatform(1.0));
+        SmartDashboard.putData("Raise Platform", new RaisePlatform(3,1.0));
         SmartDashboard.putData("Unlock Platform", new UnlockPlatform());
         SmartDashboard.putData("Toggle Speed", new ToggleSpeed());
     }

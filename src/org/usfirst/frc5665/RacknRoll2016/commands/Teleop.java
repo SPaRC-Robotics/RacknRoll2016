@@ -43,10 +43,17 @@ public class Teleop extends Command {
     	Robot.arm.moveArm(j.getRawAxis(1));
     	Robot.wrist.openWrist(j.getRawAxis(2)-j.getRawAxis(3));
     	
+    	//Start
+    	Robot.oi.getButton(8).whileHeld(new RaisePlatform(3,-1.0));
+    	//Back
     	Robot.oi.getButton(7).whileHeld(new UnlockPlatform());
-    	Robot.oi.getButton(6).whileHeld(new RaisePlatform(1.0));
-    	Robot.oi.getButton(5).whileHeld(new RaisePlatform(-1.0));
+    	//Left bumper
+    	Robot.oi.getButton(6).whileHeld(new RaisePlatform(1,1.0));
+    	//Right bumper
+    	Robot.oi.getButton(5).whileHeld(new RaisePlatform(2,1.0));
+    	//X
     	Robot.oi.getButton(3).whenPressed(new ToggleSpeed());
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
