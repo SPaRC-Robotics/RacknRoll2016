@@ -47,9 +47,9 @@ public class Teleop extends Command {
     	Robot.oi.getButton(8).whileHeld(new RaisePlatform(3,-1.0));
     	//Back
     	Robot.oi.getButton(7).whileHeld(new UnlockPlatform());
-    	//Left bumper
-    	Robot.oi.getButton(6).whileHeld(new RaisePlatform(1,1.0));
     	//Right bumper
+    	Robot.oi.getButton(6).whileHeld(new RaisePlatform(1,1.0));
+    	//Left bumper
     	Robot.oi.getButton(5).whileHeld(new RaisePlatform(2,1.0));
     	//X
     	Robot.oi.getButton(3).whenPressed(new ToggleSpeed());

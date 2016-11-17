@@ -29,13 +29,13 @@ public class Platform extends Subsystem {
     	lock.set(0.0);
     }
     public void raise(int target, double direction) {
-    	if(target==1 || target==3)
-    	{
-    		motorRight.set(1.0*direction);
-    	}
     	if(target==2 || target==3)
     	{
-        	motorLeft.set(-1.0*direction);
+    		motorLeft.set(1.0*direction);
+    	}
+    	if(target==1 || target==3)
+    	{
+        	motorRight.set(1.0*direction);
     	}
     }
     public void stopRaise() {
