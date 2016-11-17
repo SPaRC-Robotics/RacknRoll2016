@@ -17,10 +17,10 @@ import org.usfirst.frc5665.RacknRoll2016.subsystems.*;
 /**
  *
  */
-public class Autonomous extends CommandGroup {
+public class AutonomousCommand extends CommandGroup {
 
 
-    public Autonomous() {
+    public AutonomousCommand() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
@@ -37,6 +37,6 @@ public class Autonomous extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-        addSequential(new Swing(0,0)); 
+        addSequential(new Swing(0)); 
     } 
 }

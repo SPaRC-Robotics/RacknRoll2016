@@ -19,12 +19,9 @@ import org.usfirst.frc5665.RacknRoll2016.Robot;
  */
 public class Swing extends Command {
 
-	double duration;
 	double direction;
 
-    public Swing(double duration,double direction) {
-
-    	this.duration = duration;
+    public Swing(double direction) {
     	this.direction = direction;
         requires(Robot.arm);
     }

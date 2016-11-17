@@ -2,4 +2,4 @@
 /build/
 /dist/
 *~
-/sysProps.xml
+sysProps.xml

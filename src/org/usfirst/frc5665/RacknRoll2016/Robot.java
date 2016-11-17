@@ -52,7 +52,7 @@ public class Robot extends IterativeRobot {
         // constructed yet. Thus, their requires() statements may grab null
         // pointers. Bad news. Don't move it.
         oi = new OI();
-        autonomousCommand = new Autonomous();
+        autonomousCommand = new AutonomousCommand();
         // instantiate the command used for the autonomous period
     }
 

@@ -11,22 +11,30 @@
 
 package org.usfirst.frc5665.RacknRoll2016.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc5665.RacknRoll2016.Robot;
 
 /**
  *
  */
-public class Grab extends Command {
+public class AutoDrive extends Command {
 
-    private double direction;
+    private double xAxis;
+    private double yAxis;
+    private double duration;
     
-    public Grab(double direction) {
-        this.direction = direction;
+    public AutoDrive(double xAxis, double yAxis, double duration) {
+        this.xAxis = xAxis;
+        this.yAxis = yAxis;
+        this.duration = duration;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.drive.arcadeDrive(xAxis, yAxis);
+    	Timer.delay(duration);
+    	Robot.drive.arcadeDrive(0, 0);
     }
 
     // Called repeatedly when this Command is scheduled to run

@@ -17,12 +17,13 @@ import org.usfirst.frc5665.RacknRoll2016.Robot;
 /**
  *
  */
-public class Grab extends Command {
+public class AutoSwing extends Command {
 
-    private double direction;
-    
-    public Grab(double direction) {
-        this.direction = direction;
+	double direction;
+
+    public AutoSwing(double direction) {
+    	this.direction = direction;
+        requires(Robot.arm);
     }
 
     // Called just before this Command runs the first time

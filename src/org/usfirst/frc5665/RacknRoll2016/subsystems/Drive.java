@@ -25,8 +25,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Drive extends Subsystem {
 
-	public static double movementSensitivity = 0.75;
-	public static double rotationSensitivity = 0.5;
+	public static double movementSensitivity = 0.7;
+	public static double rotationSensitivity = 0.6;
 	public static boolean normalSpeed = true;
     private final SpeedController right = RobotMap.driveRight;
     private final SpeedController left = RobotMap.driveLeft;
@@ -46,12 +46,12 @@ public class Drive extends Subsystem {
     {
     	if(normalSpeed)
     	{
-    		movementSensitivity = 0.80;
+    		movementSensitivity = 0.85;
         	rotationSensitivity = 0.7;
         	normalSpeed=false;
     	} else {
-    		movementSensitivity = 0.65;
-    		rotationSensitivity = 0.5;
+    		movementSensitivity = 0.7;
+    		rotationSensitivity = 0.6;
     		normalSpeed=true;
     	}
     }

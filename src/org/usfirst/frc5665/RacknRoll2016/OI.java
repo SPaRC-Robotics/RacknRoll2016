@@ -57,10 +57,9 @@ public class OI {
         joystick = new Joystick(0);
 
         // SmartDashboard Buttons
-        SmartDashboard.putData("Autonomous", new Autonomous());
-        SmartDashboard.putData("Grab",new Grab(1.0,1.0));
+        SmartDashboard.putData("Grab",new Grab(1.0));
         SmartDashboard.putData("Teleop", new Teleop());
-        SmartDashboard.putData("Swing",new Swing(1.0,1.0));
+        SmartDashboard.putData("Swing",new Swing(1.0));
         SmartDashboard.putData("Raise Platform", new RaisePlatform(1.0));
         SmartDashboard.putData("Unlock Platform", new UnlockPlatform());
         SmartDashboard.putData("Toggle Speed", new ToggleSpeed());
