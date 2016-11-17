@@ -24,7 +24,16 @@ public class ToggleSpeed extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.drive.toggleSpeed();
+       	if(Robot.oi.normalSpeed)
+       	{
+       		Robot.oi.movementSensitivity = 0.75;
+           	Robot.oi.rotationSensitivity = 0.65;
+           	Robot.oi.normalSpeed=false;
+       	} else {
+       		Robot.oi.movementSensitivity = 0.7;
+       		Robot.oi.rotationSensitivity = 0.6;
+       		Robot.oi.normalSpeed=true;
+        }
     }
 
     // Called repeatedly when this Command is scheduled to run

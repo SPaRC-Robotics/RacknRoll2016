@@ -11,6 +11,7 @@
 
 package org.usfirst.frc5665.RacknRoll2016.subsystems;
 
+import org.usfirst.frc5665.RacknRoll2016.Robot;
 import org.usfirst.frc5665.RacknRoll2016.RobotMap;
 import org.usfirst.frc5665.RacknRoll2016.commands.*;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -24,10 +25,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Drive extends Subsystem {
-
-	public static double movementSensitivity = 0.7;
-	public static double rotationSensitivity = 0.6;
-	public static boolean normalSpeed = true;
+	
     private final SpeedController right = RobotMap.driveRight;
     private final SpeedController left = RobotMap.driveLeft;
     private final RobotDrive robotDrive2 = RobotMap.driveRobotDrive2;
@@ -40,20 +38,7 @@ public class Drive extends Subsystem {
         setDefaultCommand(new Teleop());
     }
     public void arcadeDrive(double xAxis, double yAxis) {
-    	robotDrive2.arcadeDrive(xAxis*rotationSensitivity,yAxis*movementSensitivity);
-    }
-    public void toggleSpeed()
-    {
-    	if(normalSpeed)
-    	{
-    		movementSensitivity = 0.75;
-        	rotationSensitivity = 0.65;
-        	normalSpeed=false;
-    	} else {
-    		movementSensitivity = 0.7;
-    		rotationSensitivity = 0.6;
-    		normalSpeed=true;
-    	}
+    	robotDrive2.arcadeDrive(xAxis*Robot.oi.rotationSensitivity,yAxis*Robot.oi.movementSensitivity);
     }
 }
 

@@ -51,7 +51,10 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
 
     public Joystick joystick;
-
+    public double movementSensitivity = 0.7;
+	public double rotationSensitivity = 0.6;
+	public boolean normalSpeed = true;
+	
     public OI() {
 
         joystick = new Joystick(0);
