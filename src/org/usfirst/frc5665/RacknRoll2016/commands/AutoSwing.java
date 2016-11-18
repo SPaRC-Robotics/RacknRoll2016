@@ -11,6 +11,7 @@
 
 package org.usfirst.frc5665.RacknRoll2016.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc5665.RacknRoll2016.Robot;
 
@@ -20,14 +21,18 @@ import org.usfirst.frc5665.RacknRoll2016.Robot;
 public class AutoSwing extends Command {
 
 	double direction;
-
-    public AutoSwing(double direction) {
+	double duration;
+	
+    public AutoSwing(double direction, double duration) {
     	this.direction = direction;
+        this.duration = duration;
         requires(Robot.arm);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.arm.moveArm(direction);
+    	Timer.delay(duration);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -36,15 +41,17 @@ public class AutoSwing extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.arm.moveArm(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	Robot.arm.moveArm(0);
     }
 }

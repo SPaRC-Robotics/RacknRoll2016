@@ -62,7 +62,7 @@ public class RobotMap {
         platformLock = new Victor(7);
         LiveWindow.addActuator("Platform", "Lock", (Victor) platformLock);
         
-        platformMotorRight = new Victor(6);
+        platformMotorRight = new Victor(8);
         LiveWindow.addActuator("Platform", "Motor Right", (Victor) platformMotorRight);
         
         platformMotorLeft = new Victor(5);

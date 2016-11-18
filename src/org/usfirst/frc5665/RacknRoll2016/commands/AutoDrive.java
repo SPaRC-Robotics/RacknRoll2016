@@ -28,6 +28,7 @@ public class AutoDrive extends Command {
         this.xAxis = xAxis;
         this.yAxis = yAxis;
         this.duration = duration;
+        requires(Robot.drive);
     }
 
     // Called just before this Command runs the first time

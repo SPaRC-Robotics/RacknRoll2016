@@ -29,6 +29,8 @@ public class Teleop extends Command {
         
         requires(Robot.drive);
         requires(Robot.wrist);
+        requires(Robot.arm);
+        requires(Robot.platform);
     }
 
     // Called just before this Command runs the first time
