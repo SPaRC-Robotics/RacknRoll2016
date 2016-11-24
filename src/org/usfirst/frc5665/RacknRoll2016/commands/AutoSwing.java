@@ -20,9 +20,9 @@ import org.usfirst.frc5665.RacknRoll2016.Robot;
  */
 public class AutoSwing extends Command {
 
-	double direction;
-	double duration;
-	
+	private double direction;
+	private double duration;
+	private double startTime;
     public AutoSwing(double direction, double duration) {
     	this.direction = direction;
         this.duration = duration;
@@ -32,7 +32,7 @@ public class AutoSwing extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.arm.moveArm(direction);
-    	Timer.delay(duration);
+    	startTime = Timer.getFPGATimestamp();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -41,7 +41,7 @@ public class AutoSwing extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return (Timer.getFPGATimestamp() >= (startTime+duration));
     }
 
     // Called once after isFinished returns true

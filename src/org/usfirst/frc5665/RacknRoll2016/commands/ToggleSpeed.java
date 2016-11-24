@@ -26,12 +26,12 @@ public class ToggleSpeed extends Command {
     protected void initialize() {
        	if(Robot.oi.normalSpeed)
        	{
-       		Robot.oi.movementSensitivity = 0.75;
-           	Robot.oi.rotationSensitivity = 0.65;
+       		Robot.oi.movementSensitivity = 0.8;
+           	Robot.oi.rotationSensitivity = 0.7;
            	Robot.oi.normalSpeed=false;
        	} else {
-       		Robot.oi.movementSensitivity = 0.7;
-       		Robot.oi.rotationSensitivity = 0.6;
+       		Robot.oi.movementSensitivity = 0.8;
+       		Robot.oi.rotationSensitivity = 0.7;
        		Robot.oi.normalSpeed=true;
         }
     }

@@ -11,8 +11,8 @@ public class Platform extends Subsystem {
     
     public boolean isLocked = true;
     private final SpeedController lock = RobotMap.platformLock;
-    private final SpeedController motorRight = RobotMap.platformMotorRight;
-    private final SpeedController motorLeft = RobotMap.platformMotorLeft;
+    //private final SpeedController motorRight = RobotMap.platformMotorRight;
+    //private final SpeedController motorLeft = RobotMap.platformMotorLeft;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -31,16 +31,16 @@ public class Platform extends Subsystem {
     public void raise(int target, double direction) {
     	if(target==2 || target==3)
     	{
-    		motorLeft.set(1.0*direction);
+    		//motorLeft.set(1.0*direction);
     	}
     	if(target==1 || target==3)
     	{
-        	motorRight.set(1.0*direction);
+        	//motorRight.set(-1.0*direction);
     	}
     }
     public void stopRaise() {
-    	motorRight.set(0.0);
-    	motorLeft.set(0.0);
+    	//motorRight.set(0.0);
+    	//motorLeft.set(0.0);
     }
 }
 

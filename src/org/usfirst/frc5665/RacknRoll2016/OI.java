@@ -51,8 +51,8 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
 
     public Joystick joystick;
-    public double movementSensitivity = 0.7;
-	public double rotationSensitivity = 0.6;
+    public double movementSensitivity = 0.8;
+	public double rotationSensitivity = 0.7;
 	public boolean normalSpeed = true;
 	
     public OI() {
@@ -61,9 +61,11 @@ public class OI {
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Teleop", new Teleop());
-        SmartDashboard.putData("Raise Platform", new RaisePlatform(3,1.0));
+        //SmartDashboard.putData("Raise Platform", new RaisePlatform(3,-1.0));
         SmartDashboard.putData("Unlock Platform", new UnlockPlatform());
         SmartDashboard.putData("Toggle Speed", new ToggleSpeed());
+        SmartDashboard.putBoolean("Normal Speed (Without X)", normalSpeed);
+        SmartDashboard.putData("Autonomous", new AutonomousCommand());
     }
 
     public Joystick getJoystick() {

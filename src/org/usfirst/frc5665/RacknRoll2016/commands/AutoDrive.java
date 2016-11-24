@@ -23,6 +23,7 @@ public class AutoDrive extends Command {
     private double xAxis;
     private double yAxis;
     private double duration;
+    private double startTime;
     
     public AutoDrive(double xAxis, double yAxis, double duration) {
         this.xAxis = xAxis;
@@ -33,17 +34,17 @@ public class AutoDrive extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.drive.arcadeDrive(xAxis, -yAxis);
-    	Timer.delay(duration);
+    	startTime = Timer.getFPGATimestamp();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.drive.arcadeDrive(xAxis, -yAxis);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+    	return (Timer.getFPGATimestamp() >= (startTime+duration));
     }
 
     // Called once after isFinished returns true

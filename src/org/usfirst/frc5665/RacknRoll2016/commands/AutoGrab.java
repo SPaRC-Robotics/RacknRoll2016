@@ -22,6 +22,7 @@ public class AutoGrab extends Command {
 
     private double direction;
     private double duration;
+    private double startTime;
     
     public AutoGrab(double direction, double duration) {
         this.direction = direction;
@@ -32,7 +33,7 @@ public class AutoGrab extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.wrist.openWrist(direction);
-    	Timer.delay(duration);
+    	startTime = Timer.getFPGATimestamp();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -41,7 +42,7 @@ public class AutoGrab extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+    	return (Timer.getFPGATimestamp() >= (startTime+duration));
     }
 
     // Called once after isFinished returns true

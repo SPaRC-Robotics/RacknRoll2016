@@ -11,6 +11,7 @@
 
 package org.usfirst.frc5665.RacknRoll2016.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.usfirst.frc5665.RacknRoll2016.subsystems.*;
 
@@ -37,8 +38,9 @@ public class AutonomousCommand extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	addSequential(new AutoDrive(0,1,1)); 
-        addSequential(new AutoSwing(-1,2));
-        addSequential(new AutoGrab(1,1)); 
+    	addSequential(new AutoSwing(-1,1.5));
+    	addSequential(new AutoDrive(0,1,2)); 
+        addSequential(new AutoDelay(0.5));
+        addSequential(new AutoGrab(-1,0.5)); 
     } 
 }

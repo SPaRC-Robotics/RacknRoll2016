@@ -33,8 +33,8 @@ public class RobotMap {
     public static SpeedController armMotorRight;
     public static SpeedController armMotorLeft;
     public static SpeedController platformLock;
-    public static SpeedController platformMotorRight;
-    public static SpeedController platformMotorLeft;
+    //public static SpeedController platformMotorRight;
+    //public static SpeedController platformMotorLeft;
     public static SpeedController wristWindowMotor;
 
     public static void init() {
@@ -55,18 +55,20 @@ public class RobotMap {
 
         armMotorRight = new Victor(3);
         LiveWindow.addActuator("Arm", "Motor Right", (Victor) armMotorRight);
+        armMotorRight.setInverted(true);
         
         armMotorLeft = new Victor(2);
         LiveWindow.addActuator("Arm", "Motor Left", (Victor) armMotorLeft);
+        armMotorLeft.setInverted(true);
         
         platformLock = new Victor(7);
         LiveWindow.addActuator("Platform", "Lock", (Victor) platformLock);
         
-        platformMotorRight = new Victor(8);
-        LiveWindow.addActuator("Platform", "Motor Right", (Victor) platformMotorRight);
+        //platformMotorRight = new Victor(5);
+        //LiveWindow.addActuator("Platform", "Motor Right", (Victor) platformMotorRight);
         
-        platformMotorLeft = new Victor(5);
-        LiveWindow.addActuator("Platform", "Motor Left", (Victor) platformMotorLeft);
+        //platformMotorLeft = new Victor(8);
+        //LiveWindow.addActuator("Platform", "Motor Left", (Victor) platformMotorLeft);
         
         wristWindowMotor = new Victor(4);
         LiveWindow.addActuator("Wrist", "Window Motor", (Victor) wristWindowMotor);

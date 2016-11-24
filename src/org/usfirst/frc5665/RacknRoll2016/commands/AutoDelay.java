@@ -11,56 +11,34 @@
 
 package org.usfirst.frc5665.RacknRoll2016.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
-
 import org.usfirst.frc5665.RacknRoll2016.Robot;
-import org.usfirst.frc5665.RacknRoll2016.RobotMap;
-import org.usfirst.frc5665.RacknRoll2016.subsystems.Drive;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
  */
-public class Teleop extends Command {
+public class AutoDelay extends Command {
 
-    public Teleop() {
-        
-        requires(Robot.drive);
-        requires(Robot.wrist);
-        requires(Robot.arm);
-        requires(Robot.platform);
+    private double duration;
+    private double startTime;
+    
+    public AutoDelay(double duration) {
+        this.duration = duration;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	startTime = Timer.getFPGATimestamp();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Joystick j = Robot.oi.getJoystick();
-    	
-    	Robot.drive.arcadeDrive(j.getRawAxis(4), j.getRawAxis(5));
-    	Robot.arm.moveArm(j.getRawAxis(1));
-    	Robot.wrist.openWrist(j.getRawAxis(2)-j.getRawAxis(3));
-    	
-    	//Start
-    	//Robot.oi.getButton(8).whileHeld(new RaisePlatform(3,-1.0));
-    	//Back
-    	Robot.oi.getButton(7).whileHeld(new UnlockPlatform());
-    	//Right bumper
-    	//Robot.oi.getButton(6).whileHeld(new RaisePlatform(1,1.0));
-    	//Left bumper
-    	//Robot.oi.getButton(5).whileHeld(new RaisePlatform(2,1.0));
-    	//X
-    	Robot.oi.getButton(3).whenPressed(new ToggleSpeed());
-    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	return (Timer.getFPGATimestamp() >= (startTime+duration));
     }
 
     // Called once after isFinished returns true
